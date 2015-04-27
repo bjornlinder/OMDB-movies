@@ -6,10 +6,6 @@ header {
   }
 }
 
-.movie-container {
-  background: 'blue'
-}
-
 .page {
   width: 750px;
 }
@@ -20,4 +16,17 @@ header {
 
 .row:after {
   clear: both;
+}
+
+.left {
+  float: left;
+  position: relative;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 0.33em;
+}
+h2 {
+  font-size: 32px;
 }

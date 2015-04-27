@@ -13,15 +13,15 @@
     
     <hr>
     
-    <div class='movie-container'>
-      <img ng-src="{{movie.Poster}}" />
-      <div class='movie details'>
+    <div class='movie-container row'>
+      <img ng-src="{{movie.Poster}}" class='left'/>
+      <div class='movie-details left'>
         <h2>{{ movie.Title }}</h2>
-        <li class='rating'>{{ movie.Rated }}</li>
-        <li class='genre'>{{ movie.Genre }}</li>
-        <li class='year'>{{ movie.Year }}</li>
-        <li class='rating'>{{ movie.Metascore }}</li>
-        <li class='rating'>{{ movie.imdbRating }}</li>
+        <li ng-show="movie.Rated != 'N/A'" class='rating'>{{ movie.Rated }}</li>
+        <li ng-show="movie.Genre != 'N/A'" class='genre'>{{ movie.Genre }}</li>
+        <li ng-show="movie.Year != 'N/A'" class='year'>{{ movie.Year }}</li>
+        <li ng-show="movie.Metascore != 'N/A'" class='rating'>{{ movie.Metascore }}</li>
+        <li ng-show="movie.imdbRating != 'N/A'" class='rating'>{{ movie.imdbRating }}</li>
         
         <p>{{ movie.Plot }}</p>
       </div>

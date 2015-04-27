@@ -14,16 +14,18 @@
 
   app.controller('OmdbAPIController', function($scope, OmdbAPI) {
     $scope.movie = {};
-    $scope.query = 'Lord of the Rings';
+    $scope.query = 'The Matrix';
 
     $scope.omdbCall = function() {
       OmdbAPI.fetch($scope.query)
       .success(function(response){
         if (response.Poster == "N/A") {
-          response.Poster = 'images/archer-meme.jpg'
+          response.Poster = 'images/archer-meme.jpg';
+          response.imgUnavailable = true;
         }
         $scope.movie = response;
       });
+      $(".movie-container").show();
     }
 
   });

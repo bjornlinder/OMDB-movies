@@ -13,18 +13,23 @@
     
     <hr>
     
-    <div class='movie-container row'>
-      <img ng-src="{{movie.Poster}}" class='left'/>
-      <div class='movie-details left'>
-        <h2>{{ movie.Title }}</h2>
-        <li ng-show="movie.Rated != 'N/A'" class='rating'>{{ movie.Rated }}</li>
-        <li ng-show="movie.Genre != 'N/A'" class='genre'>{{ movie.Genre }}</li>
-        <li ng-show="movie.Year != 'N/A'" class='year'>{{ movie.Year }}</li>
-        <li ng-show="movie.Metascore != 'N/A'" class='rating'>{{ movie.Metascore }}</li>
-        <li ng-show="movie.imdbRating != 'N/A'" class='rating'>{{ movie.imdbRating }}</li>
-        
-        <p>{{ movie.Plot }}</p>
+    <div class='movie-container row' style='display:none;'>
+      <div class='image-container left'>
+        <img ng-src="{{movie.Poster}}" class='left'/>
+        <div class='caption' ng-show='movie.imgUnavailable'>
+          <br>
+          Poster unavailable.
+        </div>
       </div>
+      <div class='movie-details left'>
+      <h2>{{ movie.Title }}</h2>
+      <li ng-show="movie.Rated != 'N/A'" class='rating'>{{ movie.Rated }}</li>
+      <li ng-show="movie.Genre != 'N/A'" class='genre'>{{ movie.Genre }}</li>
+      <li ng-show="movie.Year != 'N/A'" class='year'>Released: {{ movie.Year }}</li>
+      <li ng-show="movie.Metascore != 'N/A'" class='rating'>Metascore: {{ movie.Metascore }}</li>
+      <li ng-show="movie.imdbRating != 'N/A'" class='rating'>IMDB Rating: {{ movie.imdbRating }}</li>
+      
+      <p>{{ movie.Plot }}</p>
     </div>
   </div>
 </div>

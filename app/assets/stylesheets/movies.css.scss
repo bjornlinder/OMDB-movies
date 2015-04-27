@@ -11,5 +11,21 @@
     }
   }
 
+  li {
+    display: inline-block;
+    list-style-type: none;
+    border-right: solid 1px;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-style: italic;
+  }
+
+  .image-container {
+    min-height: 300px;
+    .caption {
+      text-align: center;
+      font-style: italic;
+    }
+  }
 }
 

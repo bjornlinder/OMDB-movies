@@ -1,8 +1,8 @@
-<div ng-app="todo">
-  <div ng-controller="TodoController">
-    <h1>TODO</h1>
+<div ng-app="omdb">
+  <div ng-controller="OmdbAPIController">
+    <h1>Search for Movies</h1>
     <ul>
-      <li ng-repeat="item in items">{{ item }}</li>
+      <li ng-no-repeat="item in movie">{{ movie.Title }}</li>
     </ul>
   </div>
 </div>

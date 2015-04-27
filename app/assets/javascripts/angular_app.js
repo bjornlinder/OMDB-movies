@@ -2,6 +2,8 @@
   'use strict';
 
   var app = angular.module("todo", []);
+  // app.module('omdb', []);
+  // app.factory('omdbAPI', function($http){
 
   app.factory('TodoList', function($http){
     return {

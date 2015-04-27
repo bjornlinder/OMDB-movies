@@ -19,15 +19,20 @@
     $scope.omdbCall = function() {
       OmdbAPI.fetch($scope.query)
       .success(function(response){
-        if (response.Poster == "N/A") {
-          response.Poster = 'images/archer-meme.jpg';
-          response.imgUnavailable = true;
+        if (response.Response == 'False') {
+          $(".movie-container").hide();
+          $scope.message = 'No results available!'
+        } else {
+          $scope.message = null;
+          if (response.Poster == "N/A") {
+            response.Poster = 'images/archer-meme.jpg';
+            response.imgUnavailable = true;
+          }
+          $scope.movie = response;
+          $(".movie-container").show();
         }
-        $scope.movie = response;
       });
-      $(".movie-container").show();
     }
-
   });
   
   // app.config( function ( $routeProvider ) {

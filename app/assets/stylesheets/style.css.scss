@@ -1,11 +1,23 @@
 header {
   text-align: center;
-  .logo {
+  img {
     float: left;
-    width: 100px;
+    width: 200px;
   }
 }
 
 .movie-container {
   background: 'blue'
+}
+
+.page {
+  width: 750px;
+}
+
+.row {
+  overflow: auto;
+}
+
+.row:after {
+  clear: both;
 }

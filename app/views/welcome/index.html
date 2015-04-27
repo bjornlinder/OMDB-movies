@@ -1,12 +1,24 @@
 <div ng-app="omdb">
   <div ng-controller="OmdbAPIController">
-    <h1>Search for Movies</h1>
-    <ul>
-      <form ng-submit='omdbCall()'>
-        <input type="text" id="query" ng-model="query"></input>
-        <input type='submit' />
-      </form>
-      <li ng-no-repeat="item in movie">{{ movie.Title }}</li>
-    </ul>
+    <h1>OMDB Movie Search</h1>
+    <form ng-submit='omdbCall()'>
+      <input type="text" id="query" ng-model="query"></input>
+      <input type='submit' />
+    </form>
+    <hr>
+    
+    <div class='movie-container'>
+      <img ng-src="{{movie.Poster}}" />
+      <div class='movie details'>
+        <h2>{{ movie.Title }}</h2>
+        <li class='rating'>{{ movie.Rated }}</li>
+        <li class='genre'>{{ movie.Genre }}</li>
+        <li class='year'>{{ movie.Year }}</li>
+        <li class='rating'>{{ movie.Metascore }}</li>
+        <li class='rating'>{{ movie.imdbRating }}</li>
+        
+        <p>{{ movie.Plot }}</p>
+      </div>
+    </div>
   </div>
 </div>

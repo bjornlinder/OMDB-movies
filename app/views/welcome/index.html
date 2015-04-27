@@ -2,6 +2,10 @@
   <div ng-controller="OmdbAPIController">
     <h1>Search for Movies</h1>
     <ul>
+      <form ng-submit='omdbCall()'>
+        <input type="text" id="query" ng-model="query"></input>
+        <input type='submit' />
+      </form>
       <li ng-no-repeat="item in movie">{{ movie.Title }}</li>
     </ul>
   </div>

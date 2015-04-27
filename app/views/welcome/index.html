@@ -1,14 +1,17 @@
 <div ng-app="omdb">
   <div ng-controller="OmdbAPIController" class='page'>
     <header class='row'>
-      <div class='logo'>
+      <div class='logo left'>
         <img src='/images/film-reel.jpeg' />
       </div>
-      <h1>OMDB Movie Search</h1>
-      <form ng-submit='omdbCall()'>
-        <input type="text" id="query" ng-model="query"></input>
-        <input type='submit' />
-      </form>
+      <div class='form-container left'>
+        <h2>OMDB Movie Search</h2>
+        
+        <form ng-submit='omdbCall()' class='left'>
+          <input type="text" id="query" ng-model="query" placeholder='search...'></input>
+          <input type='submit' class='button' value='Search!' />
+        </form>
+      </div>
     </header>
     
     <hr>

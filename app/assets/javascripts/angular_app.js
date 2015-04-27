@@ -19,6 +19,9 @@
     $scope.omdbCall = function() {
       OmdbAPI.fetch($scope.query)
       .success(function(response){
+        if (response.Poster == "N/A") {
+          response.Poster = 'images/archer-meme.jpg'
+        }
         $scope.movie = response;
       });
     }

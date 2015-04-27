@@ -1,0 +1,8 @@
+<div ng-app="omdb">
+  <div ng-controller="OmdbAPIController">
+    <h1>Search for Movies</h1>
+    <ul>
+      <li ng-no-repeat="item in movie">{{ movie.Title }}</li>
+    </ul>
+  </div>
+</div>

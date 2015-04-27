@@ -1,23 +1,21 @@
 (function(){
   'use strict';
 
-  var app = angular.module("todo", []);
-  // app.module('omdb', []);
-  // app.factory('omdbAPI', function($http){
-
-  app.factory('TodoList', function($http){
+  var app = angular.module("omdb", []);
+  
+  app.factory('OmdbAPI', function($http){
     return {
-      "fetch" : function(){
-        return $http.get("/todo.json");
+      "fetch" : function(query){
+        return $http.get("http://www.omdbapi.com/?t=The+Matrix&y=&plot=full&r=json");
       }
     }
   });
 
-  app.controller('TodoController', function($scope, TodoList) {
-    $scope.items = [];
+  app.controller('OmdbAPIController', function($scope, OmdbAPI) {
+    $scope.movie = {};
 
-    TodoList.fetch().success(function(response){
-      $scope.items = response.items;
+    OmdbAPI.fetch('The Matrix').success(function(response){
+      $scope.movie = response;
     });
   });
 })();

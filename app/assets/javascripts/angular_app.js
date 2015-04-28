@@ -15,7 +15,6 @@
   app.controller('OmdbAPIController', function($scope, OmdbAPI) {
     $scope.movie = {};
     $scope.query = 'The Matrix';
-
     $scope.omdbCall = function() {
       OmdbAPI.fetch($scope.query)
       .success(function(response){

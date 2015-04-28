@@ -33,9 +33,4 @@
       });
     }
   });
-  
-  // app.config( function ( $routeProvider ) {
-  //   $routeProvider
-  //   .when('/', {templateUrl: 'movies/show.html', controller: "OmdbAPIController"})
-  // });
 })();
